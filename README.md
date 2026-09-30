@@ -149,3 +149,10 @@ A pot that does not swing the full 0–3.3 V still works — `CAL_MIN_SPAN` acce
 above 250 counts. Calibration marks these `LOW RES` on serial. They are usable but visibly
 stepped: resolution is roughly `span / 128` ADC counts per MIDI step. If a channel reads
 `LOW RES` unexpectedly, check its outer legs actually reach 3V3 and GND before accepting it.
+
+## Credits
+
+Firmware written with [Claude Code](https://claude.com/claude-code) (Claude Opus 5), paired
+with hardware testing on the actual board — several design choices here came directly from
+measured behaviour rather than theory. The raw-count jitter gate and the two-point fallback
+both exist because captured ADC data showed the first approach failing.
